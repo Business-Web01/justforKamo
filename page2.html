@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To My Bestie Kamo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffe6f0;
+      overflow-x: hidden;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .heart {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: floatUp 10s infinite;
+      opacity: 0.7;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -7.5px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -7.5px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .envelope-container {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      margin: 150px auto;
+      background: #fff;
+      border: 2px solid #e60073;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: transform 1s ease;
+      z-index: 10;
+    }
+
+    .envelope-container.open {
+      transform: rotateX(180deg);
+    }
+
+    .open-btn {
+      background-color: #e60073;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-family: monospace;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .open-btn:hover {
+      background-color: #b30059;
+    }
+
+    .letter {
+      display: none;
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      font-size: 20px;
+      line-height: 1.8;
+      color: #333;
+      z-index: 9;
+    }
+
+    .letter.show {
+      display: block;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .popup {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      font-family: monospace;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .popup h2 {
+      color: #e6005c;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .popup button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      font-size: 14px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .popup button:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="heart-container"></div>
+
+  <div class="popup-overlay" id="introPopup">
+    <div class="popup">
+      <h2>Promise me you won’t cry 😢</h2>
+      <button onclick="closePopup()">I promise</button>
+    </div>
+  </div>
+
+  <div class="envelope-container" id="envelope">
+    <span>💌</span>
+    <button class="open-btn" onclick="openEnvelope()">Open Me</button>
+  </div>
+
+  <div class="letter" id="letter">
+    <p>Dear Kamo,</p>
+
+    <p>
+      From the moment we crossed paths, something just felt right. It’s hard to put into words how much your presence has meant to me, but I’m going to try anyway. You are more than just a best friend — you’re the sister I got to choose. You've seen me at my best, cheered me on at my highs, stood by me through the lows, and never once let go.
+    </p>
+
+    <p>
+      You’ve carried my secrets, dried my tears, made me laugh until my belly hurt, and filled my life with memories I’ll treasure forever. Through every late-night conversation, every silly joke, every deep moment, every celebration — you’ve made life brighter just by being in it.
+    </p>
+
+    <p>
+      There have been days when your voice was the only thing that kept me sane, your words the only light in my tunnel, and your hugs the only comfort I needed. And for that, I will always be grateful. People search their whole lives for a friendship like ours, and here I am — blessed with yours.
+    </p>
+
+    <p>
+      Thank you for the small things — the check-ins, the memes, the “you got this” pep talks. Thank you for the big things — your loyalty, your heart, your never-failing love. You’ve poured so much into me and our friendship, and I just want you to know that you are deeply appreciated.
+    </p>
+
+    <p>
+      Wherever life takes us, I hope we’ll always have each other. I pray that this friendship continues to bloom with every chapter. You are my sunshine on cloudy days, my safe place, my constant. I love you so much Kamo — more than words, more than moments, more than anything.
+    </p>
+
+    <p>
+      Forever your best friend,
+      <br>
+      ❤️ Mbalenhle
+    </p>
+  </div>
+<div style="text-align: center; margin-top: 40px;">
+      <button class="open-btn" onclick="goToSurprise()">Done</button>
+    </div>
+  </div>
+
+  <script>
+const heartContainer = document.getElementById('heart-container');
+
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.style.left = Math.random() * window.innerWidth + 'px';
+  heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+  heart.style.opacity = Math.random();
+  heartContainer.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 10000);
+}
+
+setInterval(createHeart, 300);
+
+function closePopup() {
+  document.getElementById('introPopup').style.display = 'none';
+}
+
+function openEnvelope() {
+  const envelope = document.getElementById('envelope');
+  const letter = document.getElementById('letter');
+  envelope.style.display = 'none';
+  letter.classList.add('show');
+}
+
+function goToSurprise() {
+  window.location.href = "surprise.html";
+}
+</script>
+</body>
+</html>
